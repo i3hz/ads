@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Checker with Dictionary File</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Hash Checker with Dictionary File</h1>
+        <div class="input-section">
+            <label for="dictionary-input">Upload dictionary file (dictionary.txt):</label><br>
+            <input type="file" id="dictionary-input" accept=".txt"><br><br>
+
+            <label for="text-input">Enter text or upload a file:</label><br>
+            <textarea id="text-input" rows="5" cols="50" placeholder="Enter your text here..."></textarea><br><br>
+            <input type="file" id="file-input" accept=".txt"><br><br>
+            <button onclick="checkHashes()">Check Words</button>
+        </div>
+        <div id="result-section"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

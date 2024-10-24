@@ -1,10 +1,7 @@
 #ifndef HASH_MAP_H
 #define HASH_MAP_H
 
-/*
- * CS 261 Data Structures
- * Assignment 5
- */
+
 
 #define HASH_FUNCTION hashFunction2
 #define MAX_TABLE_LOAD 1

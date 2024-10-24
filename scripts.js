@@ -1,7 +1,8 @@
 // Dictionary hashed object
 let hashedDictionary = {};
 
-// Function to hash a word using SHA-256
+// Function to hash a word using SHA-256 secute hash algorithm
+//In JavaScript, SHA stands for Secure Hash Algorithm. It’s a family of cryptographic hash functions designed to ensure data integrity. The most commonly used versions are SHA-1, SHA-256, and SHA-512.
 async function hashWord(word) {
     const encoder = new TextEncoder();
     const data = encoder.encode(word.trim());  // Remove any extra spaces

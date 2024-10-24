@@ -1,9 +1,3 @@
-/*
- * CS 261 Data Structures
- * Assignment 5
- * Name: Joshua McKerracher
- * Date: 2/28/2020
- */
 
 #include "hashMap.h"
 #include <stdlib.h>
@@ -13,13 +7,6 @@
 #include <ctype.h>
 
 
-int hashFunction1(const char* key) {
-    int r = 0;
-    for (int i = 0; key[i] != '\0'; i++) {
-        r += key[i];
-    }
-    return r;
-}
 
 int hashFunction2(const char* key) {
     int r = 0;
@@ -29,13 +16,7 @@ int hashFunction2(const char* key) {
     return r;
 }
 
-/**
- * Creates a new hash table link with a copy of the key string.
- * @param key Key string to copy in the link.
- * @param value Value to set in the link.
- * @param next Pointer to set as the link's next.
- * @return Hash table link allocated on the heap.
- */
+
 HashLink* hashLinkNew(const char* key, int value, HashLink* next) {
     struct HashLink * link = (struct HashLink *) malloc(sizeof(HashLink));
     link->key = malloc(sizeof(char) * (strlen(key) + 1));
@@ -47,7 +28,6 @@ HashLink* hashLinkNew(const char* key, int value, HashLink* next) {
 
 /**
  * Free the allocated memory for a hash table link created with hashLinkNew.
- * @param link
  */
 static void hashLinkDelete(HashLink* link) {
     free(link->key);
@@ -58,8 +38,6 @@ static void hashLinkDelete(HashLink* link) {
 /**
  * Initializes a hash table map, allocating memory for a link pointer table with
  * the given number of buckets.
- * @param map
- * @param capacity The number of table buckets.
  */
 void hashMapInit(HashMap* map, int capacity) {
     assert(capacity > 0);
@@ -79,8 +57,6 @@ void hashMapInit(HashMap* map, int capacity) {
 /**
  * Creates a hash table map, allocating memory for a link pointer table with
  * the given number of buckets.
- * @param capacity The number of buckets.
- * @return The allocated map.
  */
 HashMap* hashMapNew(int capacity) {
     assert(capacity > 0);
@@ -97,7 +73,6 @@ HashMap* hashMapNew(int capacity) {
 /**
  * Removes all links in the map and frees all allocated memory. You can use
  * hashLinkDelete to free the links.
- * @param map
  */
 void hashMapCleanUp(HashMap* map) {
     assert(map != 0);
